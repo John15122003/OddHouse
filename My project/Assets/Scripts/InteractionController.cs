@@ -43,6 +43,7 @@ public class InteractionController : MonoBehaviour
             objectCurrentlyOver = null;
         }
 
+        Debug.Log(objectCurrentlyOver);
         
         //Only certain componets can be interacted with, so run through them all and run the click on function only for these components
         //use an array for the components to enable using more than one on a single collider
