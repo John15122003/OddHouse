@@ -68,6 +68,16 @@ public class InteractionController : MonoBehaviour
                     animUnlock.ObjectClickedOn();
                 }
             }
+
+            Dialogue[] dialogueScript;
+            dialogueScript = objectCurrentlyOver.GetComponents<Dialogue>();
+            if(dialogueScript.Length > 0)
+            {
+                foreach(Dialogue singularDialogue in dialogueScript)
+                {
+                    singularDialogue.DialogueClickedOn();
+                }
+            }
         }
 
         //Use the existance of an object to click on to turn on/off the excalimation sprite
