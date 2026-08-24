@@ -15,20 +15,22 @@ public class Dialogue : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(HideTextAfterDelay());
+        
     }
 
     IEnumerator HideTextAfterDelay()
     {
+        dialogueTextObject.text = textToDisplay;
         // Wait for the specified time
         yield return new WaitForSeconds(3);
-        
+        dialogueTextObject.text = "";
         // Hide the text object without destroying it
         DialogueText.SetActive(false);
     }
     public void DialogueClickedOn()
     {
-        dialogueTextObject.text = textToDisplay;
+        StartCoroutine(HideTextAfterDelay());
+        
         Debug.Log("display dialogue");
         Invoke("ResetText", 3);
         
