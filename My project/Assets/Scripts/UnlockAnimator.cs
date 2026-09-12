@@ -6,19 +6,24 @@ public class UnlockAnimator : MonoBehaviour
 {
     public AnimatorController doorToUnlock;
     public bool turnOffObject;
+    public bool isLocked = true;
 
     bool hasBeenInteractedWith;
 
-    //The function called by the InteractionController
+    // The function called by the InteractionController
     public void ObjectClickedOn()
     {
-        //sets the door to be interactable
+        // Unlock the door
         doorToUnlock.isLocked = false;
+
         hasBeenInteractedWith = true;
-        //turn off this object?
+
+        // Turn off this object?
         if (turnOffObject)
         {
             this.gameObject.SetActive(false);
         }
     }
 }
+
+

@@ -6,17 +6,28 @@ public class AnimatorController : MonoBehaviour
 {
     public Animator objectToAnimate;
     public string openBooleanName;
-    //controls if this script is able to be interacted with
+
+    // Controls if this script is able to be interacted with
     public bool isLocked;
+
     public bool hasBeenInteractedWith;
 
-    //The function called by the InteractionController
+    // Keeps track of whether the door is open
+    private bool isOpen = false;
+
+    // The function called by the InteractionController
     public void ObjectClickedOn()
     {
-        if(isLocked == false)
+        if (isLocked == false)
         {
-            objectToAnimate.SetBool(openBooleanName, true);
+            // Toggle the door
+            isOpen = !isOpen;
+
+            // Tell the Animator to open or close
+            objectToAnimate.SetBool(openBooleanName, isOpen);
+
             hasBeenInteractedWith = true;
         }
     }
 }
+
