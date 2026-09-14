@@ -20,19 +20,19 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.16352195, g: 0.16352195, b: 0.16352195, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 0.05
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0, g: 0.0015164502, b: 0.1509434, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
-  m_DefaultReflectionMode: 0
+  m_DefaultReflectionMode: 1
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
@@ -2473,6 +2473,7 @@ GameObject:
   - component: {fileID: 849537202}
   - component: {fileID: 849537205}
   - component: {fileID: 849537207}
+  - component: {fileID: 849537208}
   m_Layer: 0
   m_Name: Exit
   m_TagString: Interactive
@@ -2590,6 +2591,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5546940888850326318, guid: 0ce0f23d073560643b5c9939cb466ad5, type: 3}
+--- !u!114 &849537208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849537200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7586232f923251941ba46426a59b3838, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FadeCode
+  fadeImage: {fileID: 1938689449}
+  fadeDuration: 4
 --- !u!1 &865251149
 GameObject:
   m_ObjectHideFlags: 0
@@ -3792,11 +3807,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58d12f431e1e58048a2fc053e20b630e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimatorController
-  objectToAnimate: {fileID: 1319824841}
+  objectToAnimate: {fileID: 1319824845}
   openBooleanName: DoorOpen
   isLocked: 0
   hasBeenInteractedWith: 0
---- !u!95 &1319824841
+--- !u!95 &1319824845
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -3806,7 +3821,7 @@ Animator:
   m_GameObject: {fileID: 1319824838}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 76bb58e300eb8e04b928cc11615aad5d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 66e566165c8a7a74a85f13e04ace00f3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4696,13 +4711,13 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b8893aaed592e0446907989858fffbba, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1319824841}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b8893aaed592e0446907989858fffbba, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1319824840}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b8893aaed592e0446907989858fffbba, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1319824839}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b8893aaed592e0446907989858fffbba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1319824845}
   m_SourcePrefab: {fileID: 100100000, guid: b8893aaed592e0446907989858fffbba, type: 3}
 --- !u!1 &1878033278 stripped
 GameObject:
@@ -5007,7 +5022,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimatorController
   objectToAnimate: {fileID: 1900890580}
-  openBooleanName: ChestOpen
+  openBooleanName: Chest Open
   isLocked: 0
   hasBeenInteractedWith: 0
 --- !u!1 &1919227967 stripped
@@ -5170,16 +5185,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1938689448}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 65.8}
-  m_LocalScale: {x: 2.865, y: 2.865, z: 2.865}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 37006769}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -455, y: -263.3}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1979860648
 GameObject:
@@ -5490,8 +5505,8 @@ Light:
   serializedVersion: 12
   m_Type: 2
   m_Color: {r: 0.8207547, g: 0.8207547, b: 0.8207547, a: 1}
-  m_Intensity: 3.33
-  m_Range: 4
+  m_Intensity: 50
+  m_Range: 678.3749
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize2D: {x: 0.5, y: 0.5}

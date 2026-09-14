@@ -47,7 +47,7 @@ public class InteractionController : MonoBehaviour
         
         //Only certain componets can be interacted with, so run through them all and run the click on function only for these components
         //use an array for the components to enable using more than one on a single collider
-        if(Mouse.current.leftButton.IsPressed() && objectCurrentlyOver != null)
+        if(Mouse.current.leftButton.wasPressedThisFrame && objectCurrentlyOver != null)
         {
             AnimatorController[] animatorControllers;
             animatorControllers = objectCurrentlyOver.GetComponents<AnimatorController>();
@@ -76,6 +76,17 @@ public class InteractionController : MonoBehaviour
                 foreach(Dialogue singularDialogue in dialogueScript)
                 {
                     singularDialogue.DialogueClickedOn();
+                }
+            }
+
+            FadeCode[] fade;
+            fade = objectCurrentlyOver.GetComponents<FadeCode>();
+
+            if(fade.Length > 0)
+            {
+                foreach(FadeCode fadeObject in fade)
+                {
+                    fadeObject.FadeToBlack();
                 }
             }
         }

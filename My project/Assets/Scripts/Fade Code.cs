@@ -26,7 +26,7 @@ public class FadeCode : MonoBehaviour
 
             fadeImage.color = color;
 
-            yield return null;
+            yield return new WaitForEndOfFrame();
         }
 
         color.a = 1f;
